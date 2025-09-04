@@ -1,17 +1,20 @@
 import streamlit as st
 
-
 st.set_page_config(
     page_title="My Multi-Page Lab App",
     page_icon=":books:",
-    layout="centered",        #
+    layout="wide",
     initial_sidebar_state="expanded"
 )
 
-st.sidebar.title("🔹 Lab Navigation")
+st.sidebar.header("Lab Navigation")
+st.sidebar.markdown("---")  # horizontal divider
 
-lab1 = st.Page("lab1.py",title = "LAB 1",icon = ":material/edit:")
-lab2 = st.Page("lab2.py",title = "LAB 2",icon = ":material/edit:")
+# Define lab pages
+lab2 = st.Page("lab2.py", title="LAB 2", icon=":material/edit:")
+lab1 = st.Page("lab1.py", title="LAB 1", icon=":material/edit:")
 
-pg = st.navigation([lab1,lab2])
+
+# Navigation
+pg = st.navigation([lab2, lab1])
 pg.run()
