@@ -1,20 +1,23 @@
 import streamlit as st
+from Labs import lab1, lab2, lab3
 
 st.set_page_config(
-    page_title="My Multi-Page Lab App",
-    page_icon=":books:",
-    layout="wide",
-    initial_sidebar_state="expanded"
+    page_title="My Lab Manager",
+    page_icon="📚",
+    layout="wide"
 )
 
-st.sidebar.header("Lab Navigation")
-st.sidebar.markdown("---")  # horizontal divider
+st.title("Lab Manager")
 
-# Define lab pages
-lab2 = st.Page("lab2.py", title="LAB 2", icon=":material/edit:")
-lab1 = st.Page("lab1.py", title="LAB 1", icon=":material/edit:")
+st.sidebar.header("🧭 Navigation")
+st.sidebar.markdown("---")
 
+# Sidebar navigation
+selection = st.sidebar.radio("Go to", ["LAB 1", "LAB 2","Lab 3"])
 
-# Navigation
-pg = st.navigation([lab2, lab1])
-pg.run()
+if selection == "LAB 1":
+    lab1.app()  
+elif selection == "LAB 2":
+    lab2.app()
+elif selection == "Lab 3":
+    lab3.app() 
