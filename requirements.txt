@@ -3,3 +3,4 @@ openai
 PyMuPDF
 PyPDF2
 chromadb
+pysqlite3
